@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.autoTest.mapper.CaseMapper">
+    <select id="getCaseById" resultType="com.autoTest.pojo.Cases">
+        select  * from cases where id=#{id}
+    </select>
+    <update id="insertDataById" parameterType="com.autoTest.pojo.Cases">
+       update cases set dependData=#{dependData} where id =#{id}
+    </update>
+    <select id="getDependDataById" resultType="string">
+        select dependData from cases where id=#{id};
+    </select>
+    <update id="updateParam" parameterType="com.autoTest.pojo.Cases">
+        update cases set param=#{param} where id =#{id}
+    </update>
+    <update id="addParam" parameterType="com.autoTest.pojo.Cases">
+        update cases set param=#{param} where id =#{id}
+    </update>
+</mapper>
